@@ -9,6 +9,7 @@ import { Quotation } from './models/quotation';
 })
 export class AppComponent {
   title = 'appCitations';
+  // titleNavbar = 'Najlepsze cytaty';
   showForm = false;
   quotes: Quotation[] = QUOTES;
   quotation: Quotation = { author: '', sentence: '', votes: 0 };
@@ -24,5 +25,14 @@ export class AppComponent {
   addQuotation() {
     this.quotes.unshift(this.quotation);
     this.quotation = { author: '', sentence: '', votes: 0 };
+  }
+  // tslint:disable-next-line: typedef
+  bestQuotes() {
+    return this.quotes.filter(q => q.votes > 0);
+  }
+
+  // tslint:disable-next-line: typedef
+  worstQuotes() {
+    return this.quotes.filter(q => q.votes < 0);
   }
 }
