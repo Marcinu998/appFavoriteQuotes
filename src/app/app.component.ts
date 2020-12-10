@@ -10,21 +10,13 @@ import { Quotation } from './models/quotation';
 export class AppComponent {
   title = 'appCitations';
   // titleNavbar = 'Najlepsze cytaty';
-  showForm = false;
+
   quotes: Quotation[] = QUOTES;
-  quotation: Quotation = { author: '', sentence: '', votes: 0 };
+
 
   // tslint:disable-next-line: typedef
   addVote(quotation: Quotation, value: number) {
     quotation.votes += value;
-  }
-  onSwitchForm(): void {
-    this.showForm = !this.showForm;
-  }
-  // tslint:disable-next-line: typedef
-  addQuotation() {
-    this.quotes.unshift(this.quotation);
-    this.quotation = { author: '', sentence: '', votes: 0 };
   }
   // tslint:disable-next-line: typedef
   bestQuotes() {
@@ -34,5 +26,10 @@ export class AppComponent {
   // tslint:disable-next-line: typedef
   worstQuotes() {
     return this.quotes.filter(q => q.votes < 0);
+  }
+
+  // tslint:disable-next-line: typedef
+  onNewQuotation(quotation: Quotation) {
+    this.quotes.unshift(quotation);
   }
 }
