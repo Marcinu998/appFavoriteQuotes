@@ -6,7 +6,5 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./vote-buttons.component.css']
 })
 export class VoteButtonsComponent {
-
   @Output() voteValue = new EventEmitter<number>();
-
 }

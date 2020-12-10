@@ -1,7 +1,6 @@
 <!-- Nagłówek -->
 <app-navbar title="Najlepsze Cytaty"></app-navbar>
 <!-- koniec nagłówka -->
-
 <div class="container q-container">
   <!--Dodawanie cytatu-->
   <app-button customClasses="btn-floating teal add-button" (clickButton)="form.onSwitchForm()">
@@ -9,7 +8,6 @@
   </app-button>
   <app-form #form (newQuotation)="onNewQuotation($event)"></app-form>
   <!-- Koniec dodawania cytatu -->
-  <!-- </div> -->
   <div class="row">
     <!-- Lista cytatów -->
     <div class="col s8">

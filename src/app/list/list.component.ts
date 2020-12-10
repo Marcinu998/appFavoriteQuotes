@@ -16,7 +16,6 @@ export class ListComponent {
     this.vote.emit({ quotation, value });
   }
 }
-
 export interface QuotationEvent {
   quotation: Quotation;
   value: number;
