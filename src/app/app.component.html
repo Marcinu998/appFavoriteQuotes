@@ -9,19 +9,18 @@
   </app-button>
   <app-form #form (newQuotation)="onNewQuotation($event)"></app-form>
   <!-- Koniec dodawania cytatu -->
-</div>
-<div class="row">
-  <!-- Lista cytatów -->
-  <div class="col s8">
-    <app-list [quotes]="quotes" (vote)="addVote($event.quotation, $event.value)"></app-list>
+  <!-- </div> -->
+  <div class="row">
+    <!-- Lista cytatów -->
+    <div class="col s8">
+      <app-list [quotes]="quotes" (vote)="addVote($event.quotation, $event.value)"></app-list>
+    </div>
+    <!-- Koniec lista cytatów -->
+    <!-- Sekcja rankigów -->
+    <div class="col s4">
+      <app-ranking [quotes]="bestQuotes()" title="Najlepsze"></app-ranking>
+      <app-ranking [quotes]="worstQuotes()" title="Najgorsze"></app-ranking>
+    </div>
+    <!-- Sekcja rankigów -->
   </div>
-  <!-- Koniec lista cytatów -->
-
-  <!-- Sekcja rankigów -->
-  <div class="col s4">
-    <app-ranking [quotes]="bestQuotes()" title="Najlepsze"></app-ranking>
-    <app-ranking [quotes]="worstQuotes()" title="Najgorsze"></app-ranking>
-  </div>
-  <!-- Sekcja rankigów -->
 </div>
-<!-- </div> -->

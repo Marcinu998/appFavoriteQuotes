@@ -12,12 +12,7 @@
         <span class="badge black left white-text">
             {{ quotation.votes }}
           </span>
-        <app-button customClasses="btn blue mr-5" (click)="addVote(quotation, +1)">
-          <i class="material-icons">exposure_plus_1</i>
-        </app-button>
-        <app-button customClasses="btn brown" (click)="addVote(quotation, -1)">
-          <i class="material-icons">exposure_neg_1</i>
-        </app-button>
+        <app-vote-buttons (voteValue)="addVote(quotation, $event)"></app-vote-buttons>
       </div>
     </div>
   </div>
